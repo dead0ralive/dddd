@@ -95,7 +95,7 @@ void Time::print()
 
 void main()
 {
-	Time a, b, plus, minus, mul;
+	Time a, b, plus, minus, mul, massTime[10], temp;
 
 	a.setTime(2, 50);
 	b.setTime(0, 40);
@@ -117,6 +117,31 @@ void main()
 		cout << "a < b - true" << "\n";
 	else
 		cout << "a < b - false" << "\n";
+
+	for (int i = 0; i < 10; i++)
+	{
+		massTime[i].setTime(rand() % 23 + 1, rand() % 59 + 0);
+	}
+
+	for (int i = 0; i < 10 - 1; i++)
+	{
+		for (int j = 0; j < 10 - i - 1; j++)
+		{
+			if (massTime[j] > massTime[j + 1])
+			{
+				temp = massTime[j];
+				massTime[j] = massTime[j + 1];
+				massTime[j + 1] = temp;
+			}
+		}
+	}
+
+	cout << "\n" << "Time array: " << "\n";
+
+	for (int i = 0; i < 10; i++)
+	{
+		massTime[i].print();
+	}
 
 	system("pause");
 }
