@@ -97,7 +97,7 @@ string IdCard::getDateExpire()
 
 void Employee::print()
 {
-	cout << "Deprtment " << this->department << ": " << this->position << " - " << this->name << ", sitting in " << this->room << " office, employee ID number " << this->card << "\n";
+	cout << "Deprtment " << this->department->getName() << ": " << this->position << " - " << this->name << ", sitting in " << this->room << " office, employee ID number " << this->card->getNumber() << "\n";
 }
 
 int main()
